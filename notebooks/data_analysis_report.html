@@ -7536,17 +7536,6 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=nominated-keeping">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>We start with exploring the content of the dataset.</p>
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=extra-carry">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7903,7 +7892,89 @@ a.anchor-link {
   '3': 'Lone parent family (male head)',
   '4': 'Lone parent family (female lead)',
   '5': 'Other related family',
-  'X': 'No code required (residents of a communal establishment)'}}</pre>
+  'X': 'No code required (residents of a communal establishment)'},
+ 'Age': {'1': '0 to 15',
+  '2': '16 to 24',
+  '3': '25 to 34',
+  '4': '35 to 44',
+  '5': '45 to 54',
+  '6': '55 to 64',
+  '7': '65 to 74',
+  '8': '75 and over'},
+ 'Approximate_Social_Grade': {'1': 'AB',
+  '2': 'C1',
+  '3': 'C2',
+  '4': 'DE',
+  'X': 'No code required ( People aged under 16 and people resident in communal establishments)'},
+ 'Country_Of_Birth': {'1': 'UK', '2': 'Non UK'},
+ 'Economic_Activity': {'1': 'Economically active: Employed',
+  '2': 'Economically active: Self-Employed',
+  '3': 'Economically active: Unemployed',
+  '4': 'Economically active: Full-time student',
+  '5': 'Economically inactive: Retired',
+  '6': 'Economically inactive: Student',
+  '7': 'Economically inactive: Looking after home or family',
+  '8': 'Economically inactive: Long-term sick or disabled',
+  '9': 'Economically inactive: Other',
+  'X': 'No code required (Aged under 16)'},
+ 'Ethnic_Group': {'1': 'White',
+  '2': 'Mixed or multiple ethnic group',
+  '3': 'Asian',
+  '4': 'African',
+  '5': 'Caribbean or black',
+  '6': 'Other ethnic group'},
+ 'Health (General health)': {'1': 'Very good health',
+  '2': 'Good health',
+  '3': 'Fair health',
+  '4': 'Bad health',
+  '5': 'Very bad health'},
+ 'Hours_Worked_Per_Week': {'1': 'Part-time: 15 or less hours worked',
+  '2': 'Part-time: 16 to 30 hours worked',
+  '3': 'Full-time: 31 to 48 hours worked',
+  '4': 'Full-time 49 or more hours worked',
+  'X': 'No code required (People aged under 16 and people not working)'},
+ 'Industry': {'1': 'Agriculture, forestry and fishing',
+  '2': 'Mining and quarrying; Manufacturing; Electricity, gas, steam and air conditioning system; Water supply',
+  '3': 'Construction',
+  '4': 'Wholesale and retail trade; Repair of motor vehicles and motorcycles',
+  '5': 'Accommodation and food service activities',
+  '6': 'Transport and storage; Information and communication',
+  '7': 'Financial and insurance activities',
+  '8': 'Real estate activities; Professional scientific and technical activities; Administrative and support service activities',
+  '9': 'Public administration and defence',
+  '10': 'Education',
+  '11': 'Human health and social work activities',
+  '12': 'Arts; entertainment and recreation',
+  '13': 'Other',
+  'X': 'No code required (People aged under 16 and people who have never worked)'},
+ 'Marital_Status': {'1': 'Single (Never married or never registered a same-sex civil partnership',
+  '2': 'Married or in a same sex-civil partnership',
+  '3': 'Separated, but still legally married or still legally in a same-sex civil partnership',
+  '4': 'Divorced or formerly in a same-sex civil partnership which is now legally dissolved',
+  '5': 'Widowed or surviving partner from a same-sex civil partnership'},
+ 'Occupation': {'1': 'Managers, Directors and Senior Officials',
+  '2': 'Professional Occupations',
+  '3': 'Associate Professional and Technical Occupations',
+  '4': 'Administrative and Secretarial Occupations',
+  '5': 'Skilled Trades Occupations',
+  '6': 'Caring, Leisure and Other Service Occupations',
+  '7': 'Sales and Customer Service Occupations',
+  '8': 'Process, Plant and Machine Operatives',
+  '9': 'Elementary Occupations',
+  'X': 'No code required (People aged under 16 and people who have never worked)'},
+ 'Religion': {'1': 'No religion',
+  '2': 'Christian',
+  '3': 'Buddhist',
+  '4': 'Hindu',
+  '5': 'Jewish',
+  '6': 'Muslim',
+  '7': 'Sikh',
+  '8': 'Other religion',
+  '9': 'Not stated'},
+ 'Residence_Type': {'C': 'Resident in a Communal Establishment',
+  'P': 'Not resident in a Communal Establishment'},
+ 'Sex': {'1': 'Male', '2': 'Female'},
+ 'Student (Schoolchild or full-time student)': {'1': 'Yes', '2': 'No'}}</pre>
 </div>
 </div>
 </div>
@@ -7934,12 +8005,29 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c38e6221-31e5-475e-b6b9-dddf9f11f9f2">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ca890ec4-0ab2-4435-8153-37dab7fe3acf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Refine-data">Refine data<a class="anchor-link" href="#Refine-data">¶</a></h1><p>The <code>refine_data</code> function ensures the dataset is clean and consistent by:</p>
+<ol>
+<li>Validating that categorical variables contain only admissible values.</li>
+<li>Ensuring numerical variables fall within specified ranges.</li>
+<li>Removing duplicate rows to avoid redundancy.</li>
+</ol>
+<p>The refined dataset is saved to a new file for further analysis.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c38e6221-31e5-475e-b6b9-dddf9f11f9f2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -7985,8 +8073,37 @@ a.anchor-link {
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Refined data saved to: </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">refined_data</span>
-
-<span class="k">def</span> <span class="nf">descriptive_analysis</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f39759b4-aa3f-43c2-a05e-8bcefdf6267c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Descriptive-analysis">Descriptive analysis<a class="anchor-link" href="#Descriptive-analysis">¶</a></h1><p>The <code>descriptive_analysis</code> function provides a summary of the dataset, including:</p>
+<ol>
+<li>The total number of records.</li>
+<li>The data type of each column.</li>
+<li>Unique values and their counts for each variable (excluding "Record_Number" and "Region").</li>
+</ol>
+<p>This step provides insights into the structure and content of the dataset.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7a7f40bc-153e-4e59-9a23-e85da19f24f7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">descriptive_analysis</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Perform descriptive analysis on the dataset.</span>
 <span class="sd">    """</span>
@@ -8004,8 +8121,36 @@ a.anchor-link {
         <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"Record_Number"</span><span class="p">,</span> <span class="s2">"Region"</span><span class="p">]:</span>
             <span class="n">unique_values</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">total_records</span><span class="p">,</span> <span class="n">variable_types</span><span class="p">,</span> <span class="n">unique_values</span>
-
-<span class="k">def</span> <span class="nf">plot_bar_chart</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=11714e32-a8f5-4f92-8b1b-5635738420e8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Plot-bar-chart">Plot bar chart<a class="anchor-link" href="#Plot-bar-chart">¶</a></h1><p>The <code>plot_bar_chart</code> function generates bar charts to visualize the distribution of values in specific categorical variables.</p>
+<ol>
+<li>Number of records by age group.</li>
+<li>Number of records by occupation.</li>
+</ol>
+<p>Bar charts help identify patterns or outliers in categorical data.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=76d0ece3-4f04-444c-bf20-86b3b926a58a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_bar_chart</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Plot a bar chart for a categorical variable.</span>
 <span class="sd">    """</span>
@@ -8015,7 +8160,7 @@ a.anchor-link {
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">column</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Count'</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
+    
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="c1"># File paths</span>
     <span class="n">input_path</span> <span class="o">=</span> <span class="s2">"../data/Scotland_teaching_file_1PCT.csv"</span>
@@ -8209,12 +8354,26 @@ Name: count, dtype: int64}
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=938c3e08-1de0-44c6-81cf-10228e323178">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Data-Visualization:-Pie-Chart-Analysis">Data Visualization: Pie Chart Analysis<a class="anchor-link" href="#Data-Visualization:-Pie-Chart-Analysis">¶</a></h1><ul>
+<li>pie chart for the percentage of records for each general health descriptor;</li>
+<li>pie chart for the percentage of records for each ethnic group.</li>
+</ul>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9d096a37-70d5-4b9f-a0ff-124e47e45c16">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -8271,12 +8430,26 @@ Name: count, dtype: int64}
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e4618164-f2b3-4086-a352-ec94fae535e5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Generating-Summary-Tables">Generating Summary Tables<a class="anchor-link" href="#Generating-Summary-Tables">¶</a></h1><ul>
+<li>number of records by hours worked per week and industry;</li>
+<li>number of records by occupation and approximate social grade.</li>
+</ul>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=44c3853c-4e84-4572-8eaf-d681d50a7fb8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -8289,8 +8462,8 @@ Name: count, dtype: int64}
 <span class="n">occupation_social_grade</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"Occupation"</span><span class="p">,</span> <span class="s2">"Approximate_Social_Grade"</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># Save the tables to CSV</span>
-<span class="n">hours_worked_industry</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"hours_worked_industry.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">occupation_social_grade</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"occupation_social_grade.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">hours_worked_industry</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"../data/hours_worked_industry.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">occupation_social_grade</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"../data/occupation_social_grade.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Tables generated and saved as 'hours_worked_industry.csv' and 'occupation_social_grade.csv'"</span><span class="p">)</span>
 </pre></div>
@@ -8311,12 +8484,28 @@ Name: count, dtype: int64}
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ec42bbe4-0b63-4161-ac90-adba272aac50">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Analysis-of-Economic-Activity-and-Working-Hours">Analysis of Economic Activity and Working Hours<a class="anchor-link" href="#Analysis-of-Economic-Activity-and-Working-Hours">¶</a></h1><p>This section analyzes the dataset to derive insights related to:</p>
+<ol>
+<li>The number of economically active people grouped by age.</li>
+<li>The number of economically inactive people grouped by health descriptor.</li>
+<li>The distribution of total working hours per week for students.</li>
+</ol>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0143b06d-c2a2-4dd2-bb9f-54071e20fe44">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -8379,12 +8568,28 @@ dtype: int64
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c1818823-68b9-4d32-b010-f2de521b7af5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Interactive-Data-Visualization">Interactive Data Visualization<a class="anchor-link" href="#Interactive-Data-Visualization">¶</a></h1><p>This section of the notebook introduces an <strong>interactive plot</strong> to explore the distribution of economic activity based on:</p>
+<ol>
+<li>Selected health descriptors.</li>
+<li>A specified age range.</li>
+</ol>
+<p>The use of interactive widgets allows users to dynamically adjust the parameters and immediately visualize the corresponding data, improving the accessibility and usability of the analysis.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cd5b2235-4d85-4706-91e9-622aa7863b8b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -8445,12 +8650,23 @@ dtype: int64
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6e0fad86-b26c-4f6d-ba72-d6172dae00f6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Notebook-Conversion-to-HTML">Notebook Conversion to HTML<a class="anchor-link" href="#Notebook-Conversion-to-HTML">¶</a></h1><p>This script automates the process of converting a Jupyter Notebook into an HTML report using the <code>nbconvert</code> utility. The resulting HTML file combines code, visualizations, and Markdown explanations in a single, shareable document.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=12a34b28-3337-43f2-ae0f-dacc8513ff16">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span>
@@ -8493,20 +8709,6 @@ dtype: int64
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Conversion successful! HTML report saved to: ./data_analysis_report.html
 </pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=6b878133-25c5-4dc1-9bb3-f69dc52b3b16">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
 </div>
 </div>
 </div>
