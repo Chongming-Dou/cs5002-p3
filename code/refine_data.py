@@ -1,4 +1,13 @@
 import pandas as pd
+import argparse
+
+
+def load_data(file_path):
+    """
+    Load the dataset from the specified file path.
+    """
+    return pd.read_csv(file_path)
+
 
 def refine_data(data, admissible_values, ranges, output_path):
     """
@@ -6,6 +15,12 @@ def refine_data(data, admissible_values, ranges, output_path):
     1. Check variable formats and values.
     2. Remove duplicates.
     3. Save refined dataset to a new file.
+
+    Args:
+        data (DataFrame): Original dataset.
+        admissible_values (dict): Expected admissible values for categorical variables.
+        ranges (dict): Expected ranges for numerical variables.
+        output_path (str): Path to save the refined dataset.
     """
     refined_data = data.copy()
 
@@ -28,31 +43,24 @@ def refine_data(data, admissible_values, ranges, output_path):
 
     return refined_data
 
+
 if __name__ == "__main__":
-    from load_data import load_data
+    # Parse command-line arguments
+    parser = argparse.ArgumentParser(description="Refine a dataset based on specified rules.")
+    parser.add_argument("input_file", help="Path to the input CSV file.")
+    parser.add_argument("output_file", help="Path to save the refined CSV file.")
+    parser.add_argument("--admissible_values", required=True,
+                        help="JSON file specifying admissible values for categorical columns.")
+    parser.add_argument("--ranges", required=True, help="JSON file specifying ranges for numerical columns.")
 
+    args = parser.parse_args()
 
-    input_path = "../data/Scotland_teaching_file_1PCT.csv"
-    output_path = "../data/refined_data.csv"
-    data = load_data(input_path)
+    # Load dataset
+    data = load_data(args.input_file)
 
-    admissible_values = {
-        "RESIDENCE_TYPE": ["P", "C"],
-        "Family_Composition": ["1", "0", "2", "3", "4", "5"],
-        "Economic_Activity": ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
-        "Occupation": ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
-        "industry": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"],
-        "Hours_Worked_Per_Week": ["1", "2", "3", "4"],
-        "Approximate_Social_Grade": ["1", "2", "3", "4"]
-    }
+    # Load admissible values and ranges from JSON files
+    admissible_values = pd.read_json(args.admissible_values, typ='dictionary')
+    ranges = pd.read_json(args.ranges, typ='dictionary')
 
-    ranges = {
-        "age": (1, 8),
-        "health": (1, 5),
-        "student": (1, 2),
-        "Ethnic_Group": (1, 6),
-        "religion": (1, 9),
-        "Country_Of_Birth": (1, 2),
-    }
-
-    refine_data(data, admissible_values, ranges, output_path)
+    # Refine dataset
+    refine_data(data, admissible_values, ranges, args.output_file)
